@@ -14,7 +14,7 @@ class CreateKindOfWhereaboutsTable extends Migration
     public function up()
     {
         Schema::create('kind_of_whereabouts', function (Blueprint $table) {
-            $table->string('name')->unique()
+            $table->string('name')->unique();
         });
     }
 

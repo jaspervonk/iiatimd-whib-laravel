@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use DB;
 
 class KindOfWhereaboutsTableSeeder extends Seeder
 {
@@ -13,13 +14,13 @@ class KindOfWhereaboutsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('soorten_items')->insert([
+        DB::table('kind_of_whereabouts')->insert([
             'name' => "Series",
         ]);
-        DB::table('soorten_items')->insert([
+        DB::table('kind_of_whereabouts')->insert([
             'name' => "Movie",
         ]);
-        DB::table('soorten_items')->insert([
+        DB::table('kind_of_whereabouts')->insert([
             'name' => "Book",
         ]);
     }

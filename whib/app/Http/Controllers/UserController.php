@@ -40,7 +40,7 @@ class UserController extends Controller
         // Create JWT
         $jwt = $base64UrlHeader . "." . $base64UrlPayload . "." . $base64UrlSignature;
 
-        // Create user and set id to JWT token
+        // Create user and set id to JWT token and use the received name
         $User->token = $jwt;
         $User->name = $name;
         $User->save();

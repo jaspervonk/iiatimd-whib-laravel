@@ -12,7 +12,7 @@ class UserController extends Controller
         return ['users' => \App\Models\User::all()];
     }
 
-    public function register($name, \App\Models\User $User){
+    public function register($name){
         // Generate a JWT Token
         // Create token header as a JSON string
         $header = json_encode(['typ' => 'JWT', 'alg' => 'HS256']);
@@ -45,12 +45,12 @@ class UserController extends Controller
         $jwt = $base64UrlHeader . "." . $base64UrlPayload . "." . $base64UrlSignature;
 
         // Create user and set id to JWT token and use the received name
+        $User = new \App\Models\User;
         $User->token = $jwt;
         $User->name = $name;
         $User->save();
 
         // Give JWT Token back to the request
-
         return $jwt;
     }
 }

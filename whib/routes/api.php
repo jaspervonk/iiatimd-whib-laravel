@@ -18,5 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/register/{name}', [\App\Http\Controllers\UserController::class, 'register']);
 Route::get('/whereabouts/{user}', [\App\Http\Controllers\WhereaboutsController::class, 'index']);
 Route::get('/whereabouts/{user}/{uuid}', [\App\Http\Controllers\WhereaboutsController::class, 'show']);

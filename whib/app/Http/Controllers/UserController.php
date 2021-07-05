@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ReallySimpleJWT\Token;
+use DB;
 
 
 class UserController extends Controller
@@ -45,9 +46,12 @@ class UserController extends Controller
         $jwt = $base64UrlHeader . "." . $base64UrlPayload . "." . $base64UrlSignature;
 
         // Create user and set id to JWT token and use the received name
-        $users->token = $jwt;
-        $users->name = $name;
-        $users->save();
+        DB::table('users')->insert(
+            array(
+                'token' => $jwt,
+                'name' => $name
+            )
+        );
 
         // Give JWT Token back to the request
         return $jwt;

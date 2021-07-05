@@ -8,6 +8,10 @@ use ReallySimpleJWT\Token;
 
 class UserController extends Controller
 {
+    public function index(){
+        return ['users' => \App\Models\User::all()];
+    }
+
     public function register($name, \App\Models\User $User){
         // Generate a JWT Token
         // Create token header as a JSON string

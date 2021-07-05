@@ -12,7 +12,7 @@
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "rbdwllr/reallysimplejwt": "^4.0",
-        "tymon/jwt-auth": "^1.0.0",
+        "tymon/jwt-auth": "^1.0.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
